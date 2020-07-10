@@ -3,7 +3,15 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    int = {}
 
+    for item in sorted(arrays, key=len)[0]:
+        int[item] = 1
+    for arr in sorted(arrays, key=len)[1:]:
+        for item in arr:
+            if item in int.keys():
+                int[item] += 1
+    result = [k for k, v in int.items() if v == len(arrays)]
     return result
 
 
